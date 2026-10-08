@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Ambiente;
+use App\Models\Sensor;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -15,9 +17,17 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        Ambiente::create([
+            'nome' => 'nome do ambiente',
+            'descricao' => 'descricao sobre o ambiente',
+            'status' => 'status sobre o ambiente',
+        ]);
+
+        Sensor::create([
+            'codigo' => 'codigo so sensor',
+            'tipo' => 'tipo do ambiente',
+            'descricao' => 'decricao do ambiente',
+            'status' => 'status do ambiente',
         ]);
     }
 }
